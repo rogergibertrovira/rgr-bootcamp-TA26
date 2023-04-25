@@ -23,22 +23,22 @@ public class InvestigadorController {
 	InvestigadorServiceImp investigadorServiceImp;
 	
 	
-	@GetMapping("/investigadors")
+	@GetMapping("/investigadores")
 	public List<Investigador> listarInvestigadors() {
 		return investigadorServiceImp.listarInvestigadors();
 	}
 
-	@PostMapping("/investigadors")
+	@PostMapping("/investigadores")
 	public Investigador salvarInvestigador(@RequestBody Investigador investigador) {
 		return investigadorServiceImp.guardarInvestigador(investigador);
 	}
 
-	@GetMapping("/investigadors/{id}")
+	@GetMapping("/investigadores/{id}")
 	public Investigador investigadorXID(@PathVariable(name = "id") String id) {
 		return investigadorServiceImp.investigadorXID(id);
 	}
 
-	@PutMapping("/investigadors/{id}")
+	@PutMapping("/investigadores/{id}")
 	public Investigador actualizarInvestigador(@PathVariable(name = "id") String id, @RequestBody Investigador investigador) {
 
 		Investigador investigadorSeleccionado = new Investigador();
@@ -55,7 +55,7 @@ public class InvestigadorController {
 		return investigadorActualizado;
 	}
 
-	@DeleteMapping("/investigadors/{id}")
+	@DeleteMapping("/investigadores/{id}")
 	public void eliminarInvestigador(@PathVariable(name = "id") String id) {
 		investigadorServiceImp.eliminarInvestigador(id);
 	}

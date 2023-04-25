@@ -23,22 +23,22 @@ public class MaquinaRegistradoraController {
 	MaquinaRegistradoraServiceImp maquinaRegistradoraServiceImp;
 
 	
-	@GetMapping("/maquinaRegistradoras")
+	@GetMapping("/maquinas")
 	public List<MaquinaRegistradora> listarMaquinaRegistradoras() {
 		return maquinaRegistradoraServiceImp.listarMaquinaRegistradoras();
 	}
 
-	@PostMapping("/maquinaRegistradoras")
+	@PostMapping("/maquinas")
 	public MaquinaRegistradora salvarMaquinaRegistradora(@RequestBody MaquinaRegistradora maquinaRegistradora) {
 		return maquinaRegistradoraServiceImp.guardarMaquinaRegistradora(maquinaRegistradora);
 	}
 
-	@GetMapping("/maquinaRegistradoras/{id}")
+	@GetMapping("/maquinas/{id}")
 	public MaquinaRegistradora maquinaRegistradoraXID(@PathVariable(name = "id") int id) {
 		return maquinaRegistradoraServiceImp.maquinaRegistradoraXID(id);
 	}
 
-	@PutMapping("/maquinaRegistradoras/{id}")
+	@PutMapping("/maquinas/{id}")
 	public MaquinaRegistradora actualizarMaquinaRegistradora(@PathVariable(name = "id") int id, @RequestBody MaquinaRegistradora maquinaRegistradora) {
 
 		MaquinaRegistradora maquinaRegistradoraSeleccionado = new MaquinaRegistradora();
@@ -54,7 +54,7 @@ public class MaquinaRegistradoraController {
 		return maquinaRegistradoraActualizado;
 	}
 
-	@DeleteMapping("/maquinaRegistradoras/{id}")
+	@DeleteMapping("/maquinas/{id}")
 	public void eliminarMaquinaRegistradora(@PathVariable(name = "id") int id) {
 		maquinaRegistradoraServiceImp.eliminarMaquinaRegistradora(id);
 	}
